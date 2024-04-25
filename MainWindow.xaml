@@ -1,0 +1,37 @@
+﻿<Window x:Class="Practika.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Practika"
+        mc:Ignorable="d"
+        Title="САО Страховой Дом ВСК" Height="600" Width="800"
+        Icon="Image/VSKLogo.png">
+
+    <Border>
+
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                <GradientStop Color="#6190e8" Offset="0.0"/>
+                <GradientStop Color="#a7bfe8" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.Background>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+            <Frame Grid.Row="1"
+                   NavigationUIVisibility="Hidden"
+            Name="FrmMain">
+            </Frame>
+            <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Center">
+                <Image Width="250"
+                   Height="250"
+                   Source="/Image/VSKLogo.png"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

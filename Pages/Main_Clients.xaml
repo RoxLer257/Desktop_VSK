@@ -1,0 +1,116 @@
+﻿<Page x:Class="Practika.Pages.Main_Clients"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Practika.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="735"
+      Title="Main_Clients">
+
+    <Border>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="4*" />
+            </Grid.ColumnDefinitions>
+            <StackPanel VerticalAlignment="Center" Orientation="Vertical">
+
+                <TextBlock Margin="5" Text="Поиск по фамилии" />
+                <TextBox
+                Name="TxtSearch"
+                    Height="20"
+                    Width="145"
+                Margin="5"
+                TextChanged="TxtSearch_TextChanged" />
+
+                <Button
+                    Name="BtnDelete"
+                    Margin="5"
+                    Click="BtnDelete_Click"
+                    Content="Удалить">
+
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#a5db12"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#81ad09"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="135" Height="20"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button x:Name="BtnBack"
+                Margin="5"
+                Content="Данные о полисах"
+                Click="BtnBack_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#ffff00"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#ffd750"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="135" Height="20"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+            </StackPanel>
+            <DataGrid
+                Background="Transparent"
+                RowBackground="Transparent"
+            Name="DtgClients"
+            Grid.Column="1"
+            AutoGenerateColumns="False">
+                <DataGrid.Resources>
+                    <Style x:Key="WrapText" TargetType="TextBlock">
+                        <Setter Property="TextWrapping" Value="Wrap" />
+                    </Style>
+                </DataGrid.Resources>
+                <DataGrid.Columns>
+                    <DataGridTextColumn
+            Width="150"
+            Binding="{Binding FIO}"
+            ElementStyle="{StaticResource WrapText}"
+            Header="ФИО" />
+                    <DataGridTextColumn
+            Width="150"
+            Binding="{Binding C__Policy}"
+            ElementStyle="{StaticResource WrapText}"
+            Header="Номер полиса" />
+                    <DataGridTextColumn Binding="{Binding Address}" 
+                                    Header="Адрес" 
+                                    Width="150"/>
+                    <DataGridTextColumn Binding="{Binding Phone_number}" 
+                                    Header="Номер телефона" 
+                                    Width="150"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </Border>
+</Page>
