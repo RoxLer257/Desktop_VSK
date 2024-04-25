@@ -100,7 +100,7 @@
             Header="ФИО" />
                     <DataGridTextColumn
             Width="150"
-            Binding="{Binding C__Policy}"
+            Binding="{Binding PolicyNumber}"
             ElementStyle="{StaticResource WrapText}"
             Header="Номер полиса" />
                     <DataGridTextColumn Binding="{Binding Address}" 

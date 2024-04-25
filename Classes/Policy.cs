@@ -16,8 +16,8 @@ namespace Practika.Classes
     {
         public int ID { get; set; }
         public string FIO { get; set; }
-        public string C__Policy { get; set; }
-        public string C__Receipts { get; set; }
+        public string PolicyNumber { get; set; }
+        public string ReceiptsNumber { get; set; }
         public string Date_of_issue { get; set; }
         public double Price { get; set; }
         public long Phone_number { get; set; }

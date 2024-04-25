@@ -147,12 +147,12 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn
                     Width="100"
-                    Binding="{Binding C__Policy}"
+                    Binding="{Binding PolicyNumber}"
                     ElementStyle="{StaticResource WrapText}"
                     Header="Номер полиса" />
                     <DataGridTextColumn
                     Width="110"
-                    Binding="{Binding C__Receipts}"
+                    Binding="{Binding ReceiptsNumber}"
                     ElementStyle="{StaticResource WrapText}"
                     Header="Номер квитанции" />
                     <DataGridTextColumn

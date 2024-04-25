@@ -33,8 +33,8 @@ namespace Practika.Classes
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Policy> Policy { get; set; }
         public virtual DbSet<Users> Users { get; set; }
         public virtual DbSet<Roles> Roles { get; set; }
+        public virtual DbSet<Policy> Policy { get; set; }
     }
 }
